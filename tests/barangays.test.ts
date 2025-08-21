@@ -9,13 +9,13 @@ describe("Barangays", () => {
   });
 
   it("should filter barangays by city/municipality", () => {
-    const barangays = listBarangays("0403405");
+    const barangays = listBarangays("03405");
     expect(barangays.length).toEqual(54);
   });
 
   it("should fetch a specific barangay", () => {
     const barangays = listBarangays();
-    const filtered = barangays.filter((b) => b.brgyCode === "0403405057"); // Example: Milagrosa (Tulo), City of Calamba
+    const filtered = barangays.filter((b) => b.brgyCode === "03405057"); // Example: Milagrosa (Tulo), City of Calamba
 
     filtered.forEach((b) => {
       expect(b.brgyName).toBe("Milagrosa");

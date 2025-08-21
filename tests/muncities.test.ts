@@ -10,7 +10,7 @@ describe("Muncities", () => {
 
   it("should filter muncities by province", () => {
     const muncities = listMuncities();
-    const filtered = muncities.filter((m) => m.provCode === "04034"); // Example: City of Calamba
+    const filtered = muncities.filter((m) => m.provCode === "034"); // Example: City of Calamba
     expect(filtered.length).toBeGreaterThan(0);
 
     filtered.forEach((m) => {
@@ -20,7 +20,7 @@ describe("Muncities", () => {
 
   it("should return only provinces belonging to a specific region", () => {
     // NCR Special
-    const ncrMakati = listMuncities("13803");
+    const ncrMakati = listMuncities("803");
 
     expect(Array.isArray(ncrMakati)).toBe(true);
     expect(ncrMakati.length).toEqual(1);

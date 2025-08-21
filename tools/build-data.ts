@@ -93,32 +93,32 @@ csvFiles.forEach((file) => {
       }
       // Provinces (include NCR as a pseudo-province)
       else if (geoLevel === "Prov" && regCode !== "13") {
-        provinces[regCode + provCode] = {
+        provinces[provCode] = {
           psgcCode,
           regCode,
-          provCode: regCode + provCode,
+          provCode,
           provName: geoName,
         };
       }
       // Municipalities / Cities / SubMunicipalities
       else if (geoLevel === "City" || geoLevel === "Mun" || geoLevel === "SubMun") {
-        muncities[regCode + provCode + munCityCode] = {
+        muncities[provCode + munCityCode] = {
           psgcCode,
           regCode,
-          provCode: regCode + provCode,
-          munCityCode: regCode + provCode + munCityCode,
+          provCode,
+          munCityCode: provCode + munCityCode,
           munCityName: geoName,
           munCityOldName: oldGeoName,
         };
       }
       // Barangays
       else if (geoLevel === "Bgy") {
-        barangays[regCode + provCode + munCityCode + brgyCode] = {
+        barangays[provCode + munCityCode + brgyCode] = {
           psgcCode,
           regCode,
-          provCode: regCode + provCode,
-          munCityCode: regCode + provCode + munCityCode,
-          brgyCode: regCode + provCode + munCityCode + brgyCode,
+          provCode,
+          munCityCode: provCode + munCityCode,
+          brgyCode: provCode + munCityCode + brgyCode,
           brgyName: geoName,
           brgyOldName: oldGeoName,
         };

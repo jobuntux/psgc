@@ -8,493 +8,493 @@
   {
     "psgcCode": "1400100000",
     "regCode": "14",
-    "provCode": "14001",
+    "provCode": "001",
     "provName": "Abra"
   },
   {
     "psgcCode": "1600200000",
     "regCode": "16",
-    "provCode": "16002",
+    "provCode": "002",
     "provName": "Agusan del Norte"
   },
   {
     "psgcCode": "1600300000",
     "regCode": "16",
-    "provCode": "16003",
+    "provCode": "003",
     "provName": "Agusan del Sur"
   },
   {
     "psgcCode": "0600400000",
     "regCode": "06",
-    "provCode": "06004",
+    "provCode": "004",
     "provName": "Aklan"
   },
   {
     "psgcCode": "0500500000",
     "regCode": "05",
-    "provCode": "05005",
+    "provCode": "005",
     "provName": "Albay"
   },
   {
     "psgcCode": "0600600000",
     "regCode": "06",
-    "provCode": "06006",
+    "provCode": "006",
     "provName": "Antique"
   },
   {
     "psgcCode": "1408100000",
     "regCode": "14",
-    "provCode": "14081",
+    "provCode": "081",
     "provName": "Apayao"
   },
   {
     "psgcCode": "0307700000",
     "regCode": "03",
-    "provCode": "03077",
+    "provCode": "077",
     "provName": "Aurora"
   },
   {
     "psgcCode": "1900700000",
     "regCode": "19",
-    "provCode": "19007",
+    "provCode": "007",
     "provName": "Basilan"
   },
   {
     "psgcCode": "0300800000",
     "regCode": "03",
-    "provCode": "03008",
+    "provCode": "008",
     "provName": "Bataan"
   },
   {
     "psgcCode": "0200900000",
     "regCode": "02",
-    "provCode": "02009",
+    "provCode": "009",
     "provName": "Batanes"
   },
   {
     "psgcCode": "0401000000",
     "regCode": "04",
-    "provCode": "04010",
+    "provCode": "010",
     "provName": "Batangas"
   },
   {
     "psgcCode": "1401100000",
     "regCode": "14",
-    "provCode": "14011",
+    "provCode": "011",
     "provName": "Benguet"
   },
   {
     "psgcCode": "0807800000",
     "regCode": "08",
-    "provCode": "08078",
+    "provCode": "078",
     "provName": "Biliran"
   },
   {
     "psgcCode": "0701200000",
     "regCode": "07",
-    "provCode": "07012",
+    "provCode": "012",
     "provName": "Bohol"
   },
   {
     "psgcCode": "1001300000",
     "regCode": "10",
-    "provCode": "10013",
+    "provCode": "013",
     "provName": "Bukidnon"
   },
   {
     "psgcCode": "0301400000",
     "regCode": "03",
-    "provCode": "03014",
+    "provCode": "014",
     "provName": "Bulacan"
   },
   {
     "psgcCode": "0201500000",
     "regCode": "02",
-    "provCode": "02015",
+    "provCode": "015",
     "provName": "Cagayan"
   },
   {
     "psgcCode": "0501600000",
     "regCode": "05",
-    "provCode": "05016",
+    "provCode": "016",
     "provName": "Camarines Norte"
   },
   {
     "psgcCode": "0501700000",
     "regCode": "05",
-    "provCode": "05017",
+    "provCode": "017",
     "provName": "Camarines Sur"
   },
   {
     "psgcCode": "1001800000",
     "regCode": "10",
-    "provCode": "10018",
+    "provCode": "018",
     "provName": "Camiguin"
   },
   {
     "psgcCode": "0601900000",
     "regCode": "06",
-    "provCode": "06019",
+    "provCode": "019",
     "provName": "Capiz"
   },
   {
     "psgcCode": "0502000000",
     "regCode": "05",
-    "provCode": "05020",
+    "provCode": "020",
     "provName": "Catanduanes"
   },
   {
     "psgcCode": "0402100000",
     "regCode": "04",
-    "provCode": "04021",
+    "provCode": "021",
     "provName": "Cavite"
   },
   {
     "psgcCode": "0702200000",
     "regCode": "07",
-    "provCode": "07022",
+    "provCode": "022",
     "provName": "Cebu"
   },
   {
     "psgcCode": "1204700000",
     "regCode": "12",
-    "provCode": "12047",
+    "provCode": "047",
     "provName": "Cotabato"
   },
   {
     "psgcCode": "1108200000",
     "regCode": "11",
-    "provCode": "11082",
+    "provCode": "082",
     "provName": "Davao de Oro"
   },
   {
     "psgcCode": "1102300000",
     "regCode": "11",
-    "provCode": "11023",
+    "provCode": "023",
     "provName": "Davao del Norte"
   },
   {
     "psgcCode": "1102400000",
     "regCode": "11",
-    "provCode": "11024",
+    "provCode": "024",
     "provName": "Davao del Sur"
   },
   {
     "psgcCode": "1108600000",
     "regCode": "11",
-    "provCode": "11086",
+    "provCode": "086",
     "provName": "Davao Occidental"
   },
   {
     "psgcCode": "1102500000",
     "regCode": "11",
-    "provCode": "11025",
+    "provCode": "025",
     "provName": "Davao Oriental"
   },
   {
     "psgcCode": "1608500000",
     "regCode": "16",
-    "provCode": "16085",
+    "provCode": "085",
     "provName": "Dinagat Islands"
   },
   {
     "psgcCode": "0802600000",
     "regCode": "08",
-    "provCode": "08026",
+    "provCode": "026",
     "provName": "Eastern Samar"
   },
   {
     "psgcCode": "0607900000",
     "regCode": "06",
-    "provCode": "06079",
+    "provCode": "079",
     "provName": "Guimaras"
   },
   {
     "psgcCode": "1402700000",
     "regCode": "14",
-    "provCode": "14027",
+    "provCode": "027",
     "provName": "Ifugao"
   },
   {
     "psgcCode": "0102800000",
     "regCode": "01",
-    "provCode": "01028",
+    "provCode": "028",
     "provName": "Ilocos Norte"
   },
   {
     "psgcCode": "0102900000",
     "regCode": "01",
-    "provCode": "01029",
+    "provCode": "029",
     "provName": "Ilocos Sur"
   },
   {
     "psgcCode": "0603000000",
     "regCode": "06",
-    "provCode": "06030",
+    "provCode": "030",
     "provName": "Iloilo"
   },
   {
     "psgcCode": "0203100000",
     "regCode": "02",
-    "provCode": "02031",
+    "provCode": "031",
     "provName": "Isabela"
   },
   {
     "psgcCode": "1403200000",
     "regCode": "14",
-    "provCode": "14032",
+    "provCode": "032",
     "provName": "Kalinga"
   },
   {
     "psgcCode": "0103300000",
     "regCode": "01",
-    "provCode": "01033",
+    "provCode": "033",
     "provName": "La Union"
   },
   {
     "psgcCode": "0403400000",
     "regCode": "04",
-    "provCode": "04034",
+    "provCode": "034",
     "provName": "Laguna"
   },
   {
     "psgcCode": "1003500000",
     "regCode": "10",
-    "provCode": "10035",
+    "provCode": "035",
     "provName": "Lanao del Norte"
   },
   {
     "psgcCode": "1903600000",
     "regCode": "19",
-    "provCode": "19036",
+    "provCode": "036",
     "provName": "Lanao del Sur"
   },
   {
     "psgcCode": "0803700000",
     "regCode": "08",
-    "provCode": "08037",
+    "provCode": "037",
     "provName": "Leyte"
   },
   {
     "psgcCode": "1908700000",
     "regCode": "19",
-    "provCode": "19087",
+    "provCode": "087",
     "provName": "Maguindanao del Norte"
   },
   {
     "psgcCode": "1908800000",
     "regCode": "19",
-    "provCode": "19088",
+    "provCode": "088",
     "provName": "Maguindanao del Sur"
   },
   {
     "psgcCode": "1704000000",
     "regCode": "17",
-    "provCode": "17040",
+    "provCode": "040",
     "provName": "Marinduque"
   },
   {
     "psgcCode": "0504100000",
     "regCode": "05",
-    "provCode": "05041",
+    "provCode": "041",
     "provName": "Masbate"
   },
   {
     "psgcCode": "1004200000",
     "regCode": "10",
-    "provCode": "10042",
+    "provCode": "042",
     "provName": "Misamis Occidental"
   },
   {
     "psgcCode": "1004300000",
     "regCode": "10",
-    "provCode": "10043",
+    "provCode": "043",
     "provName": "Misamis Oriental"
   },
   {
     "psgcCode": "1404400000",
     "regCode": "14",
-    "provCode": "14044",
+    "provCode": "044",
     "provName": "Mountain Province"
   },
   {
     "psgcCode": "1804500000",
     "regCode": "18",
-    "provCode": "18045",
+    "provCode": "045",
     "provName": "Negros Occidental"
   },
   {
     "psgcCode": "1804600000",
     "regCode": "18",
-    "provCode": "18046",
+    "provCode": "046",
     "provName": "Negros Oriental"
   },
   {
     "psgcCode": "0804800000",
     "regCode": "08",
-    "provCode": "08048",
+    "provCode": "048",
     "provName": "Northern Samar"
   },
   {
     "psgcCode": "0304900000",
     "regCode": "03",
-    "provCode": "03049",
+    "provCode": "049",
     "provName": "Nueva Ecija"
   },
   {
     "psgcCode": "0205000000",
     "regCode": "02",
-    "provCode": "02050",
+    "provCode": "050",
     "provName": "Nueva Vizcaya"
   },
   {
     "psgcCode": "1705100000",
     "regCode": "17",
-    "provCode": "17051",
+    "provCode": "051",
     "provName": "Occidental Mindoro"
   },
   {
     "psgcCode": "1705200000",
     "regCode": "17",
-    "provCode": "17052",
+    "provCode": "052",
     "provName": "Oriental Mindoro"
   },
   {
     "psgcCode": "1705300000",
     "regCode": "17",
-    "provCode": "17053",
+    "provCode": "053",
     "provName": "Palawan"
   },
   {
     "psgcCode": "0305400000",
     "regCode": "03",
-    "provCode": "03054",
+    "provCode": "054",
     "provName": "Pampanga"
   },
   {
     "psgcCode": "0105500000",
     "regCode": "01",
-    "provCode": "01055",
+    "provCode": "055",
     "provName": "Pangasinan"
   },
   {
     "psgcCode": "0405600000",
     "regCode": "04",
-    "provCode": "04056",
+    "provCode": "056",
     "provName": "Quezon"
   },
   {
     "psgcCode": "0205700000",
     "regCode": "02",
-    "provCode": "02057",
+    "provCode": "057",
     "provName": "Quirino"
   },
   {
     "psgcCode": "0405800000",
     "regCode": "04",
-    "provCode": "04058",
+    "provCode": "058",
     "provName": "Rizal"
   },
   {
     "psgcCode": "1705900000",
     "regCode": "17",
-    "provCode": "17059",
+    "provCode": "059",
     "provName": "Romblon"
   },
   {
     "psgcCode": "0806000000",
     "regCode": "08",
-    "provCode": "08060",
+    "provCode": "060",
     "provName": "Samar"
   },
   {
     "psgcCode": "1208000000",
     "regCode": "12",
-    "provCode": "12080",
+    "provCode": "080",
     "provName": "Sarangani"
   },
   {
     "psgcCode": "1806100000",
     "regCode": "18",
-    "provCode": "18061",
+    "provCode": "061",
     "provName": "Siquijor"
   },
   {
     "psgcCode": "0506200000",
     "regCode": "05",
-    "provCode": "05062",
+    "provCode": "062",
     "provName": "Sorsogon"
   },
   {
     "psgcCode": "1206300000",
     "regCode": "12",
-    "provCode": "12063",
+    "provCode": "063",
     "provName": "South Cotabato"
   },
   {
     "psgcCode": "0806400000",
     "regCode": "08",
-    "provCode": "08064",
+    "provCode": "064",
     "provName": "Southern Leyte"
   },
   {
     "psgcCode": "1206500000",
     "regCode": "12",
-    "provCode": "12065",
+    "provCode": "065",
     "provName": "Sultan Kudarat"
   },
   {
     "psgcCode": "1906600000",
     "regCode": "19",
-    "provCode": "19066",
+    "provCode": "066",
     "provName": "Sulu"
   },
   {
     "psgcCode": "1606700000",
     "regCode": "16",
-    "provCode": "16067",
+    "provCode": "067",
     "provName": "Surigao del Norte"
   },
   {
     "psgcCode": "1606800000",
     "regCode": "16",
-    "provCode": "16068",
+    "provCode": "068",
     "provName": "Surigao del Sur"
   },
   {
     "psgcCode": "0306900000",
     "regCode": "03",
-    "provCode": "03069",
+    "provCode": "069",
     "provName": "Tarlac"
   },
   {
     "psgcCode": "1907000000",
     "regCode": "19",
-    "provCode": "19070",
+    "provCode": "070",
     "provName": "Tawi-Tawi"
   },
   {
     "psgcCode": "0307100000",
     "regCode": "03",
-    "provCode": "03071",
+    "provCode": "071",
     "provName": "Zambales"
   },
   {
     "psgcCode": "0907200000",
     "regCode": "09",
-    "provCode": "09072",
+    "provCode": "072",
     "provName": "Zamboanga del Norte"
   },
   {
     "psgcCode": "0907300000",
     "regCode": "09",
-    "provCode": "09073",
+    "provCode": "073",
     "provName": "Zamboanga del Sur"
   },
   {
     "psgcCode": "0908300000",
     "regCode": "09",
-    "provCode": "09083",
+    "provCode": "083",
     "provName": "Zamboanga Sibugay"
   }
 ]
