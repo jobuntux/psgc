@@ -1,5 +1,4 @@
 import { listProvinces } from "../src/core";
-import { CURRENT_VERSION } from "../src/config";
 
 describe("listProvinces", () => {
   it("should return the correct count per region", () => {
@@ -25,20 +24,20 @@ describe("listProvinces", () => {
     };
 
     for (const [regCode, expectedCount] of Object.entries(expectations)) {
-      const provinces = listProvinces(CURRENT_VERSION, regCode);
+      const provinces = listProvinces(regCode);
       expect(provinces.length).toBe(expectedCount);
     }
   });
 
   it("should list all provinces (82 total + NCR = 83)", () => {
-    const provinces = listProvinces(CURRENT_VERSION);
+    const provinces = listProvinces();
     expect(provinces).toBeDefined();
     expect(Array.isArray(provinces)).toBe(true);
     expect(provinces.length).toBe(83); // Based on PSA PSGC dataset
   });
 
   it("should return all provinces for the current version", () => {
-    const provinces = listProvinces(CURRENT_VERSION);
+    const provinces = listProvinces();
     expect(Array.isArray(provinces)).toBe(true);
     expect(provinces.length).toBeGreaterThan(0);
 
@@ -49,7 +48,7 @@ describe("listProvinces", () => {
   });
 
   it("should return only provinces belonging to a specific region", () => {
-    const region4Provinces = listProvinces(CURRENT_VERSION, "04");
+    const region4Provinces = listProvinces("04");
 
     expect(Array.isArray(region4Provinces)).toBe(true);
     expect(region4Provinces.length).toEqual(5); // Ca-La-Ba-R-Zon
@@ -65,7 +64,7 @@ describe("listProvinces", () => {
   });
 
   it("should return an empty array if no provinces match the region code", () => {
-    const result = listProvinces(CURRENT_VERSION, "XXX"); // Non-existent province
+    const result = listProvinces("XXX"); // Non-existent province
     expect(result).toEqual([]);
   });
 });

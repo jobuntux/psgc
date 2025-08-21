@@ -1,7 +1,11 @@
 import type { Barangay } from "@/types/geo";
-import { loadJsonFile } from "@/data/loaders";
-import { CURRENT_VERSION } from "@/config";
+import rawBarangays from "@/../data/2025-2Q/barangays.json";
 
-export function listBarangays(version: string = CURRENT_VERSION): Barangay[] {
-  return loadJsonFile<Barangay[]>(version, "barangays.json");
+const barangays = rawBarangays as Barangay[];
+
+/*********************
+ * List of Barangays
+ ********************/
+export function listBarangays(munCityCode?: string): Barangay[] {
+  return munCityCode ? barangays.filter((b) => b.munCityCode === munCityCode) : barangays;
 }

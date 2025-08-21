@@ -1,11 +1,11 @@
 import type { Province } from "@/types/geo";
-import { loadJsonFile } from "@/data/loaders";
-import { CURRENT_VERSION } from "@/config";
+import rawProvinces from "@/../data/2025-2Q/provinces.json";
 
-/***************************************************************
- * List provinces. If `regCode` is provided, filter by region. *
- **************************************************************/
-export function listProvinces(version: string = CURRENT_VERSION, regCode?: string): Province[] {
-  const provinces = loadJsonFile<Province[]>(version, "provinces.json");
+const provinces = rawProvinces as Province[];
+
+/*********************
+ * List of Provinces
+ ********************/
+export function listProvinces(regCode?: string): Province[] {
   return regCode ? provinces.filter((p) => p.regCode === regCode) : provinces;
 }
