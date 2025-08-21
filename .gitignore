@@ -1,0 +1,53 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# TypeScript cache
+*.tsbuildinfo
+*.tsbuildinfo.*
+
+# Logs
+*.log
+logs/*
+*.pid
+*.seed
+*.pid.lock
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Test coverage / temp
+coverage/
+.nyc_output/
+.tmp/
+temp/
+
+# Raw PSGC CSVs (ignored in Git, but keep folder alive)
+raw/*
+
+# Ignore generated JSON if you don’t want to commit them
+# (comment this out if you DO want them in Git)
+# data/
+
+!*.gitkeep
