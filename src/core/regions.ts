@@ -1,7 +1,11 @@
 import type { Region } from "@/types/geo";
-import { loadJsonFile } from "@/data/loaders";
-import { CURRENT_VERSION } from "@/config";
+import rawRegions from "@/../data/2025-2Q/regions.json";
 
-export function listRegions(version: string = CURRENT_VERSION): Region[] {
-  return loadJsonFile<Region[]>(version, "regions.json");
+const regions = rawRegions as Region[];
+
+/*******************
+ * List of Regions
+ ******************/
+export function listRegions(): Region[] {
+  return regions;
 }

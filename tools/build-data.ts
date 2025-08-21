@@ -3,14 +3,14 @@ import path from "path";
 import csv from "csv-parser";
 import type { Region, Province, MunCity, Barangay } from "../src/types/geo";
 
-const RAW_DIR = "raw";
-const DATA_DIR = "data";
+const RAW_DIR = path.resolve("raw");
+const DATA_DIR = path.resolve("data");
 
 // 1. Get all CSVs in raw/
 const csvFiles = fs.readdirSync(RAW_DIR).filter((f) => f.endsWith(".csv"));
 if (csvFiles.length === 0) {
   console.error("❌ No CSV files found in raw/");
-  process.exit(1);
+  throw new Error("No CSV files found in raw/");
 }
 
 // 2. Map CSV basenames (without .csv)
@@ -29,7 +29,7 @@ fs.readdirSync(DATA_DIR).forEach((folder) => {
 csvFiles.forEach((file) => {
   const INPUT_FILE = path.join(RAW_DIR, file);
   const versionName = path.basename(INPUT_FILE, ".csv");
-  const OUTPUT_DIR = path.join("data", versionName);
+  const OUTPUT_DIR = path.join(DATA_DIR, versionName);
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
   const REGION_ORDER = [
@@ -63,10 +63,9 @@ csvFiles.forEach((file) => {
   const muncities: Record<string, MunCity> = {};
   const barangays: Record<string, Barangay> = {};
 
-  const NCR_PROV_KEY = "13"; // Region 13 (NCR), no provCode
-  provinces[NCR_PROV_KEY] = {
+  provinces["13"] = {
     psgcCode: "1300000000",
-    regCode: NCR_PROV_KEY,
+    regCode: "13",
     provCode: "000", // empty, since NCR doesn’t really have provinces
     provName: "National Capital Region (NCR)",
   };
@@ -78,7 +77,6 @@ csvFiles.forEach((file) => {
       const geoName = row["Name"];
       const oldGeoName = row["Old names"];
       const geoLevel = row["Geographic Level"];
-      // const geoCityClass = row["City Class"];
 
       const regCode = psgcCode.substring(0, 2);
       const provCode = psgcCode.substring(2, 5);
@@ -108,9 +106,6 @@ csvFiles.forEach((file) => {
           psgcCode,
           regCode,
           provCode: regCode + provCode,
-          // geoCityClass === "City" || geoCityClass === "ICC" || regCode === "13"
-          //   ? "000"
-          //   : provCode,
           munCityCode: regCode + provCode + munCityCode,
           munCityName: geoName,
           munCityOldName: oldGeoName,
