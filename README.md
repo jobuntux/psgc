@@ -142,7 +142,7 @@ The dataset includes:
 | **Fax**                | None                                                                                                                                                                                              |
 | **Email**              | scd.staff@psa.gov.ph                                                                                                                                                                              |
 
-> <h4><i>Source: [PSA Website – PSGC Releases](https://psa.gov.ph/classification/psgc)</i></h4>
+> <h4><i>Source: <a href="https://psa.gov.ph/classification/psgc/">https://psa.gov.ph/classification/psgc/</a></i></h4>
 
 ---
 
