@@ -150,10 +150,11 @@ csvFiles.forEach((file) => {
         a.brgyName.localeCompare(b.brgyName),
       );
 
-      fs.writeFileSync(REGIONS_FILE, JSON.stringify(sortedRegions, null, 2));
-      fs.writeFileSync(PROVINCES_FILE, JSON.stringify(sortedProvinces, null, 2));
-      fs.writeFileSync(MUNCITIES_FILE, JSON.stringify(sortedMuncities, null, 2));
-      fs.writeFileSync(BARANGAYS_FILE, JSON.stringify(sortedBarangays, null, 2));
+      // Write minified JSON (no whitespace, compact)
+      fs.writeFileSync(REGIONS_FILE, JSON.stringify(sortedRegions));
+      fs.writeFileSync(PROVINCES_FILE, JSON.stringify(sortedProvinces));
+      fs.writeFileSync(MUNCITIES_FILE, JSON.stringify(sortedMuncities));
+      fs.writeFileSync(BARANGAYS_FILE, JSON.stringify(sortedBarangays));
 
       console.log(`✅ Finished! JSON files created in ${OUTPUT_DIR}`);
     });
