@@ -2,6 +2,11 @@
   "name": "@jobuntux/psgc",
   "version": "0.1.6",
   "description": "Philippine Standard Geographic Code (PSGC) utilities and data",
+  "keywords": [
+    "philippines",
+    "psgc",
+    "geographic"
+  ],
   "license": "MIT",
   "author": "jobuntux",
   "type": "module",
