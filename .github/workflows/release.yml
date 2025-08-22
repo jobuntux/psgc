@@ -2,10 +2,11 @@ name: GitHub Release
 
 on:
   push:
-    branches:
-      - main
     tags:
       - "v*"
+
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -30,8 +31,20 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Get package version
+        id: pkg
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
       - name: Publish to npm
-        run: npm publish --access public
+        run: |
+          VERSION=${{ steps.pkg.outputs.version }}
+          if npm info @jobuntux/psgc@$VERSION > /dev/null 2>&1; then
+            echo "⚠️ Version $VERSION already exists on npm. Skipping publish."
+          else
+            npm publish --access public
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
