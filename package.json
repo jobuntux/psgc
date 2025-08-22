@@ -15,15 +15,15 @@
     "test": "tests"
   },
   "scripts": {
-    "lint": "eslint src tests",
-    "lint:fix": "eslint src tests --fix",
+    "build:data": "tsx tools/build-data.ts",
     "format": "prettier --write \"{src,tests,tools}/**/*.{ts,tsx,js,json,md}\"",
     "format:check": "prettier --check \"{src,tests,tools}/**/*.{ts,tsx,js,json,md}\"",
-    "build": "tsc && tsc-alias",
-    "build:data": "tsx tools/build-data.ts",
-    "test": "jest",
-    "log:clear": "node -e \"require('fs').writeFileSync('logs/development.log', '')\"",
+    "lint": "eslint src tests",
+    "lint:fix": "eslint src tests --fix",
     "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "build": "tsc && tsc-alias",
+    "log:clear": "node -e \"require('fs').writeFileSync('logs/development.log', '')\"",
     "prepare": "husky"
   },
   "dependencies": {
