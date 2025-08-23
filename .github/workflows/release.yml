@@ -31,10 +31,15 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Get package version
+        id: pkg
+        run: echo "version=$(node -p \"require('./package.json').version\")" >> $GITHUB_OUTPUT
+
       - name: Publish to npm
         run: |
-          if npm info @jobuntux/psgc@$npm_package_version > /dev/null 2>&1; then
-            echo "⚠️ Version $npm_package_version already exists on npm. Skipping publish."
+          VERSION=${{ steps.pkg.outputs.version }}
+          if npm info @jobuntux/psgc@$VERSION > /dev/null 2>&1; then
+            echo "⚠️ Version $VERSION already exists on npm. Skipping publish."
           else
             npm publish --access public
           fi
