@@ -3,6 +3,14 @@ import rawProvinces from "@/../data/2025-2Q/provinces.json";
 
 const provinces = rawProvinces as Province[];
 
+const provinceIndex: Record<string, Province[]> = provinces.reduce(
+  (acc, p) => {
+    (acc[p.regCode] ??= []).push(p);
+    return acc;
+  },
+  {} as Record<string, Province[]>,
+);
+
 /**************************************************************************************
  * Returns the list of provinces, optionally filtered by a region code.
  *
@@ -41,5 +49,5 @@ const provinces = rawProvinces as Province[];
  * ```
  **************************************************************************************/
 export function listProvinces(regCode?: string): Province[] {
-  return regCode ? provinces.filter((p) => p.regCode === regCode) : provinces;
+  return regCode ? [...(provinceIndex[regCode] ?? [])] : [...provinces];
 }
