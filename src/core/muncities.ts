@@ -3,6 +3,14 @@ import rawMuncities from "@/../data/2025-2Q/muncities.json";
 
 const muncities = rawMuncities as MunCity[];
 
+const munCityIndex: Record<string, MunCity[]> = muncities.reduce(
+  (acc, m) => {
+    (acc[m.provCode] ??= []).push(m);
+    return acc;
+  },
+  {} as Record<string, MunCity[]>,
+);
+
 /**************************************************************************************
  * Returns the list of municipalities, cities, and sub-municipalities,
  * optionally filtered by a province code.
@@ -46,5 +54,5 @@ const muncities = rawMuncities as MunCity[];
  * ```
  **************************************************************************************/
 export function listMuncities(provCode?: string): MunCity[] {
-  return provCode ? muncities.filter((m) => m.provCode === provCode) : muncities;
+  return provCode ? [...(munCityIndex[provCode] ?? [])] : [...muncities];
 }

@@ -3,6 +3,14 @@ import rawBarangays from "@/../data/2025-2Q/barangays.json";
 
 const barangays = rawBarangays as Barangay[];
 
+const barangayIndex: Record<string, Barangay[]> = barangays.reduce(
+  (acc, b) => {
+    (acc[b.munCityCode] ??= []).push(b);
+    return acc;
+  },
+  {} as Record<string, Barangay[]>,
+);
+
 /**************************************************************************************
  * Returns the list of barangays, optionally filtered by a municipality/city code.
  *
@@ -43,5 +51,5 @@ const barangays = rawBarangays as Barangay[];
  * ```
  **************************************************************************************/
 export function listBarangays(munCityCode?: string): Barangay[] {
-  return munCityCode ? barangays.filter((b) => b.munCityCode === munCityCode) : barangays;
+  return munCityCode ? [...(barangayIndex[munCityCode] ?? [])] : [...barangays];
 }

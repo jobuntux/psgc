@@ -43,5 +43,5 @@ const regions = rawRegions as Region[];
  * ```
  **************************************************************************************/
 export function listRegions(): Region[] {
-  return regions;
+  return [...regions];
 }
