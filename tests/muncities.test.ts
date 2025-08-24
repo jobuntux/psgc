@@ -20,13 +20,13 @@ describe("Muncities", () => {
 
   it("should return only provinces belonging to a specific region", () => {
     // NCR Special
-    const ncrMakati = listMuncities("803");
+    const ncrCities = listMuncities("000");
 
-    expect(Array.isArray(ncrMakati)).toBe(true);
-    expect(ncrMakati.length).toEqual(1);
+    expect(Array.isArray(ncrCities)).toBe(true);
+    expect(ncrCities.length).toEqual(31);
 
-    ncrMakati.forEach((makati) => {
-      expect(makati.munCityName).toBe("City of Makati");
+    ncrCities.forEach((ncrCity) => {
+      expect(ncrCity.regCode).toBe("13");
     });
   });
 
