@@ -11,6 +11,11 @@ const munCityIndex: Record<string, MunCity[]> = muncities.reduce(
   {} as Record<string, MunCity[]>,
 );
 
+// Dynamically collect NCR provCodes (regCode 13, skip the fake 000 entry)
+const NCR_PROVCODES: string[] = Array.from(
+  new Set(muncities.filter((m) => m.regCode === "13").map((m) => m.provCode)),
+);
+
 /**************************************************************************************
  * Returns the list of municipalities, cities, and sub-municipalities,
  * optionally filtered by a province code.
@@ -54,5 +59,12 @@ const munCityIndex: Record<string, MunCity[]> = muncities.reduce(
  * ```
  **************************************************************************************/
 export function listMuncities(provCode?: string): MunCity[] {
-  return provCode ? [...(munCityIndex[provCode] ?? [])] : [...muncities];
+  if (!provCode) return [...muncities];
+
+  if (provCode === "000") {
+    // Special case: NCR, return all its cities
+    return NCR_PROVCODES.flatMap((code) => munCityIndex[code] ?? []);
+  }
+
+  return munCityIndex[provCode] ? [...munCityIndex[provCode]] : [];
 }
