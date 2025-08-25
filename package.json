@@ -1,6 +1,6 @@
 {
   "name": "@jobuntux/psgc",
-  "version": "0.1.17",
+  "version": "0.2.0",
   "description": "Philippine Standard Geographic Code (PSGC) utilities and dataset for JavaScript/TypeScript projects",
   "repository": {
     "type": "git",
