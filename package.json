@@ -1,14 +1,25 @@
 {
   "name": "@jobuntux/psgc",
   "version": "0.1.16",
-  "description": "Philippine Standard Geographic Code (PSGC) utilities and data",
-  "keywords": [
-    "philippines",
-    "psgc",
-    "geographic"
-  ],
+  "description": "Philippine Standard Geographic Code (PSGC) utilities and dataset for JavaScript/TypeScript projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jobuntux/psgc.git"
+  },
+  "homepage": "https://jobuntux.github.io/psgc/",
+  "bugs": {
+    "url": "https://github.com/jobuntux/psgc/issues"
+  },
   "license": "MIT",
-  "author": "jobuntux",
+  "keywords": [
+    "psgc",
+    "philippines",
+    "geodata",
+    "regions",
+    "provinces",
+    "barangays"
+  ],
+  "author": "jobuntux <jobuntux@gmail.com>",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
