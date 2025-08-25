@@ -1,7 +1,17 @@
 import fs from "fs";
 import path from "path";
 import csv from "csv-parser";
-import type { Region, Province, MunCity, Barangay } from "../src/types/geo";
+
+import type {
+  TRegion,
+  TProvince,
+  TMunCity,
+  TBarangay,
+  TGeoLevel,
+  TCityClass,
+} from "../src/types/geo";
+import { logMessage } from "../src/utils/logger";
+import { prettyPrintProvinceCounts, REGION_ORDER } from "./region-names";
 
 const RAW_DIR = path.resolve("raw");
 const DATA_DIR = path.resolve("data");
@@ -32,51 +42,24 @@ csvFiles.forEach((file) => {
   const OUTPUT_DIR = path.join(DATA_DIR, versionName);
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  const REGION_ORDER = [
-    "13", // NCR
-    "14", // CAR
-    "01",
-    "02",
-    "03",
-    "04",
-    "17",
-    "05",
-    "06",
-    "18",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-    "16", // Caraga
-    "19", // BARMM
-  ];
-
   const REGIONS_FILE = path.join(OUTPUT_DIR, "regions.json");
   const PROVINCES_FILE = path.join(OUTPUT_DIR, "provinces.json");
   const MUNCITIES_FILE = path.join(OUTPUT_DIR, "muncities.json");
   const BARANGAYS_FILE = path.join(OUTPUT_DIR, "barangays.json");
 
-  const regions: Record<string, Region> = {};
-  const provinces: Record<string, Province> = {};
-  const muncities: Record<string, MunCity> = {};
-  const barangays: Record<string, Barangay> = {};
-
-  provinces["13"] = {
-    psgcCode: "1300000000",
-    regCode: "13",
-    provCode: "000", // empty, since NCR doesn’t really have provinces
-    provName: "National Capital Region (NCR)",
-  };
+  const regions: Record<string, TRegion> = {};
+  const provinces: Record<string, TProvince> = {};
+  const muncities: Record<string, TMunCity> = {};
+  const barangays: Record<string, TBarangay> = {};
 
   fs.createReadStream(INPUT_FILE)
     .pipe(csv())
     .on("data", (row: Record<string, string>) => {
-      const psgcCode = row["10-digit PSGC"];
-      const geoName = row["Name"];
-      const oldGeoName = row["Old names"];
-      const geoLevel = row["Geographic Level"];
+      const psgcCode = row["10-digit PSGC"] as string;
+      const geoName = row["Name"] as string;
+      const geoOldName = row["Old names"] as string;
+      const geoLevel = row["Geographic Level"] as TGeoLevel;
+      const cityLevel = row["City Class"] as TCityClass;
 
       const regCode = psgcCode.substring(0, 2);
       const provCode = psgcCode.substring(2, 5);
@@ -91,24 +74,51 @@ csvFiles.forEach((file) => {
           regionName: geoName,
         };
       }
-      // Provinces (include NCR as a pseudo-province)
-      else if (geoLevel === "Prov" && regCode !== "13") {
+      // Provinces
+      else if (geoLevel === "Prov") {
         provinces[provCode] = {
           psgcCode,
           regCode,
           provCode,
           provName: geoName,
+          provOldName: geoOldName,
+          cityClass: cityLevel || null,
+        };
+      }
+      // HUCs
+      else if (cityLevel == "HUC") {
+        provinces[provCode] = {
+          psgcCode,
+          regCode,
+          provCode,
+          provName: geoName,
+          provOldName: geoOldName,
+          cityClass: cityLevel || null,
+        };
+
+        muncities[provCode + "00"] = {
+          psgcCode: provCode + "00",
+          regCode,
+          provCode,
+          munCityCode: provCode + "00",
+          munCityName: geoName,
+          munCityOldName: geoOldName,
         };
       }
       // Municipalities / Cities / SubMunicipalities
-      else if (geoLevel === "City" || geoLevel === "Mun" || geoLevel === "SubMun") {
+      else if (
+        cityLevel === "CC" ||
+        cityLevel == "ICC" ||
+        geoLevel === "Mun" ||
+        geoLevel === "SubMun"
+      ) {
         muncities[provCode + munCityCode] = {
           psgcCode,
           regCode,
           provCode,
           munCityCode: provCode + munCityCode,
           munCityName: geoName,
-          munCityOldName: oldGeoName,
+          munCityOldName: geoOldName,
         };
       }
       // Barangays
@@ -120,11 +130,26 @@ csvFiles.forEach((file) => {
           munCityCode: provCode + munCityCode,
           brgyCode: provCode + munCityCode + brgyCode,
           brgyName: geoName,
-          brgyOldName: oldGeoName,
+          brgyOldName: geoOldName,
         };
       }
     })
     .on("end", () => {
+      /*******************************************
+       * - This marks the start of deriving data.
+       */
+      const provinceAndHUCCount: Record<string, number> = {};
+
+      for (const p of Object.values(provinces)) {
+        // provinceAndHUCCount
+        provinceAndHUCCount[p.regCode] = (provinceAndHUCCount[p.regCode] ?? 0) + 1;
+      }
+
+      logMessage(prettyPrintProvinceCounts(provinceAndHUCCount));
+
+      /** - This marks the end of deriving data.
+       *****************************************/
+
       // Sort Regions (Follow REGION_ORDER)
       const sortedRegions = Object.values(regions).sort(
         (a, b) => REGION_ORDER.indexOf(a.regCode) - REGION_ORDER.indexOf(b.regCode),
