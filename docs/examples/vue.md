@@ -103,7 +103,7 @@ function handleBarangayChange(e: Event) {
     <select
       :value="munCityCode"
       @change="handleMunCityChange"
-      :disabled="!provinceCode || isHUC || muncities.length === 0"
+      :disabled="!provinceCode || muncities.length === 1"
     >
       <option value="">-- Select Municipality / City --</option>
       <option v-for="mun in muncities" :key="mun.munCityCode" :value="mun.munCityCode">

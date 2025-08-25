@@ -96,7 +96,7 @@ function App() {
             setMunCityCode(e.target.value);
             setBarangayCode('');
           }}
-          disabled={!provinceCode || isHUC || muncities.length === 0}
+          disabled={!provinceCode || muncities.length === 1}
         >
           <option value="">-- Select Municipality / City --</option>
           {muncities.map((mun) => (
