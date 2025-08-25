@@ -1,9 +1,7 @@
 # Reported Issues
 
-## HUCs
+\- no reported issues yet -
 
-HUCs (Highly Urbanized Cities) aside from NCR Cities are not listed in any dropdowns (e.g. _City of Angeles_, _City of Butuan_, etc).
+## Archives
 
-## Sub-municipalities
-
-Binondo and other areas classified as submunicipalities have barangays, but they are not considered municipalities. Since the PSGC doesn’t provide a clear classification, I defined my own approach for handling them.
+[See Issues Archive](/archive/issues)

@@ -9,31 +9,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- ## [Unreleased] -->
 
-## [v0.1.16]: 2025-08-24
+## v0.2.0
 
-[GitHub Release v0.1.16](https://github.com/jobuntux/psgc/releases/tag/v0.1.16)
+_Date: 2025-08-25_
 
-### Added
-- New VitePress documentation site (in `docs/`)
-- Code examples for React and Vue
-- Better styling for dropdowns across frameworks
+[GitHub Release v0.2.0](https://github.com/jobuntux/psgc/releases/tag/v0.2.0)
 
-### Fixed
-- Improved indexing performance for barangay lookups
-- Refactored helper functions with JSDoc comments
+### New Features
 
-## [v0.1.15]: 2025-08-23
+- Introduced additional types for stronger type safety
+- Added documentation for constants sourced from the official PSGC spreadsheet `2025-2Q`
+- Rebuilt dataset using `2025-2Q` release
 
-[GitHub Release v0.1.15](https://github.com/jobuntux/psgc/releases/tag/v0.1.15)
+### Changes
 
-### Added
-- Initial publish to npm
-- Functions:
-  - `listRegions`
-  - `listProvinces`
-  - `listMuncities`
-  - `listBarangays`
+- All types now use the T prefix (e.g., `TRegion`, `TProvince`)
+- Standardized type naming format
+- Refined filtering logic for locations marked as HUCs
+- Updated and adjusted test cases
+- Improved project documentation
 
-### Fixed
-- Release workflow bug (GitHub Action failing on missing tag)
-- Package.json metadata cleanup
+## Archives
+
+[See Changelogs Archive](/archive/changelogs)
