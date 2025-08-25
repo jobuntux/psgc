@@ -21,6 +21,7 @@
   },
   "scripts": {
     "build:data": "tsx tools/build-data.ts",
+    "prepare": "husky",
     "format": "prettier --write \"{src,tests,tools}/**/*.{ts,tsx,js,json,md}\"",
     "format:check": "prettier --check \"{src,tests,tools}/**/*.{ts,tsx,js,json,md}\"",
     "lint": "eslint src tests",
@@ -29,7 +30,9 @@
     "test": "jest",
     "build": "tsc && tsc-alias",
     "log:clear": "node -e \"require('fs').writeFileSync('logs/development.log', '')\"",
-    "prepare": "husky"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "csv-parser": "^3.2.0"
@@ -50,7 +53,8 @@
     "tsc-alias": "^1.8.16",
     "tsx": "^4.20.4",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.40.0"
+    "typescript-eslint": "^8.40.0",
+    "vitepress": "^1.6.4"
   },
   "engines": {
     "node": ">=22.0.0",
