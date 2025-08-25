@@ -49,23 +49,31 @@ yarn add @jobuntux/psgc
 
 ## Quick Example
 
-```ts
-import { listRegions, listProvinces, listMuncities, listBarangays } from '@jobuntux/psgc'
+```typescript
+import {
+  listRegions,
+  listProvinces,
+  listMuncities,
+  listBarangays
+} from '@jobuntux/psgc'
 
 // list all regions
 console.log(listRegions())
 
-// list provinces in Region III (Central Luzon)
+// list provinces and HUCs in Region III (Central Luzon)
 console.log(listProvinces('03'))
 
 // list municipalities in Bulacan
-console.log(listMuncities('0314'))
+console.log(listMuncities('03014'))
 
 // list barangays in Malolos City
-console.log(listBarangays('031410'))
+console.log(listBarangays('01410'))
 ```
 
 ## Documentation
+
+![pgsc-new-coding-structure](/pgsc-new-coding-structure.png)
+**Fig 1**. This package adheres to the **PSGC Revision 1 NEW CODING STRUCTURE**.
 
 * [Important Notes](/dev/notes)
 * [Guide → Installation](/guide/installation)

@@ -35,7 +35,7 @@ Example snippet from `package.json`:
 ```json
 {
   "dependencies": {
-    "@jobuntux/psgc": "^0.1.16"
+    "@jobuntux/psgc": "^0.2.0"
   }
 }
 ```

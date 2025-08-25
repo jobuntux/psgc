@@ -46,6 +46,15 @@ export default defineConfig({
           ],
         },
       ],
+      "/archive/": [
+        {
+          text: "Archives",
+          items: [
+            { text: "Changelogs", link: "/archive/changelogs" },
+            { text: "Issues", link: "/archive/issues" },
+          ],
+        },
+      ],
     },
     footer: {
       message:

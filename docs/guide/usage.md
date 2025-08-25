@@ -7,35 +7,40 @@ You can easily list regions, provinces, municipalities/cities, and barangays.
 
 In your project, import the functions you need:
 
-```ts
-import { listRegions, listProvinces, listMuncities, listBarangays } from "@jobuntux/psgc";
+```typescript
+import {
+  listRegions,
+  listProvinces,
+  listMuncities,
+  listBarangays
+} from "@jobuntux/psgc";
 ```
 
 ## 2. List regions
 
-```ts
+```typescript
 const regions = listRegions();
 console.log(regions);
 ```
 
 ## 3. List provinces
 
-```ts
+```typescript
 const provinces = listProvinces();
 console.log(provinces);
 ```
 
 ## 4. List municipalities or cities
 
-```ts
-const muncities = listMuncities("0128"); // pass a province code
+```typescript
+const muncities = listMuncities("03014"); // pass a province code
 console.log(muncities);
 ```
 
 ## 5. List barangays
 
-```ts
-const barangays = listBarangays("012801"); // pass a municipality/city code
+```typescript
+const barangays = listBarangays("01410"); // pass a municipality/city code
 console.log(barangays);
 ```
 
