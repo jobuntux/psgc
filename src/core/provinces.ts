@@ -1,14 +1,14 @@
-import type { Province } from "@/types/geo";
+import type { TProvince } from "@/types/geo";
 import rawProvinces from "@/../data/2025-2Q/provinces.json";
 
-const provinces = rawProvinces as Province[];
+const provinces = rawProvinces as TProvince[];
 
-const provinceIndex: Record<string, Province[]> = provinces.reduce(
+const provinceIndex: Record<string, TProvince[]> = provinces.reduce(
   (acc, p) => {
     (acc[p.regCode] ??= []).push(p);
     return acc;
   },
-  {} as Record<string, Province[]>,
+  {} as Record<string, TProvince[]>,
 );
 
 /**************************************************************************************
@@ -48,6 +48,6 @@ const provinceIndex: Record<string, Province[]> = provinces.reduce(
  * console.log(listProvinces("XXX")); // []
  * ```
  **************************************************************************************/
-export function listProvinces(regCode?: string): Province[] {
+export function listProvinces(regCode?: string): TProvince[] {
   return regCode ? [...(provinceIndex[regCode] ?? [])] : [...provinces];
 }

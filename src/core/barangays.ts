@@ -1,14 +1,14 @@
-import type { Barangay } from "@/types/geo";
+import type { TBarangay } from "@/types/geo";
 import rawBarangays from "@/../data/2025-2Q/barangays.json";
 
-const barangays = rawBarangays as Barangay[];
+const barangays = rawBarangays as TBarangay[];
 
-const barangayIndex: Record<string, Barangay[]> = barangays.reduce(
+const barangayIndex: Record<string, TBarangay[]> = barangays.reduce(
   (acc, b) => {
     (acc[b.munCityCode] ??= []).push(b);
     return acc;
   },
-  {} as Record<string, Barangay[]>,
+  {} as Record<string, TBarangay[]>,
 );
 
 /**************************************************************************************
@@ -50,6 +50,6 @@ const barangayIndex: Record<string, Barangay[]> = barangays.reduce(
  * console.log(listBarangays("XXX")); // []
  * ```
  **************************************************************************************/
-export function listBarangays(munCityCode?: string): Barangay[] {
+export function listBarangays(munCityCode?: string): TBarangay[] {
   return munCityCode ? [...(barangayIndex[munCityCode] ?? [])] : [...barangays];
 }

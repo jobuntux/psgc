@@ -1,7 +1,7 @@
-import type { Region } from "@/types/geo";
+import type { TRegion } from "@/types/geo";
 import rawRegions from "@/../data/2025-2Q/regions.json";
 
-const regions = rawRegions as Region[];
+const regions = rawRegions as TRegion[];
 
 /**************************************************************************************
  * Returns the full list of available regions.
@@ -42,6 +42,6 @@ const regions = rawRegions as Region[];
  * console.log(regions[0].regionName); // "National Capital Region (NCR)"
  * ```
  **************************************************************************************/
-export function listRegions(): Region[] {
+export function listRegions(): TRegion[] {
   return [...regions];
 }

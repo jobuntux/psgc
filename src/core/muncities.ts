@@ -1,14 +1,14 @@
-import type { MunCity } from "@/types/geo";
+import type { TMunCity } from "@/types/geo";
 import rawMuncities from "@/../data/2025-2Q/muncities.json";
 
-const muncities = rawMuncities as MunCity[];
+const muncities = rawMuncities as TMunCity[];
 
-const munCityIndex: Record<string, MunCity[]> = muncities.reduce(
+const munCityIndex: Record<string, TMunCity[]> = muncities.reduce(
   (acc, m) => {
     (acc[m.provCode] ??= []).push(m);
     return acc;
   },
-  {} as Record<string, MunCity[]>,
+  {} as Record<string, TMunCity[]>,
 );
 
 // Dynamically collect NCR provCodes (regCode 13, skip the fake 000 entry)
@@ -58,7 +58,7 @@ const NCR_PROVCODES: string[] = Array.from(
  * console.log(listMuncities("XXX")); // []
  * ```
  **************************************************************************************/
-export function listMuncities(provCode?: string): MunCity[] {
+export function listMuncities(provCode?: string): TMunCity[] {
   if (!provCode) return [...muncities];
 
   if (provCode === "000") {
