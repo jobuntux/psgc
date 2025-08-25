@@ -1,17 +1,24 @@
-export type Region = {
+export type TGeoLevel = "Bgy" | "City" | "Mun" | "Prov" | "Reg" | "SubMun";
+
+export type TCityClass = "HUC" | "CC" | "ICC";
+
+export type TRegion = {
   psgcCode: string;
   regCode: string;
   regionName: string;
 };
 
-export type Province = {
+export type TProvince = {
   psgcCode: string;
   regCode: string;
   provCode?: string;
   provName: string;
+  provOldName?: string;
+  cityClass?: TCityClass;
+  munCityCode?: string;
 };
 
-export type MunCity = {
+export type TMunCity = {
   psgcCode: string;
   regCode: string;
   provCode: string;
@@ -20,7 +27,7 @@ export type MunCity = {
   munCityOldName?: string;
 };
 
-export type Barangay = {
+export type TBarangay = {
   psgcCode: string;
   regCode: string;
   provCode: string;
