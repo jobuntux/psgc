@@ -2,7 +2,7 @@
 
 ## v0.1.16
 
-_Date: 2025-08-24_
+_Release date: 2025-08-24_
 
 [GitHub Release v0.1.16](https://github.com/jobuntux/psgc/releases/tag/v0.1.16)
 
@@ -17,7 +17,7 @@ _Date: 2025-08-24_
 
 ## v0.1.15
 
-_Date: 2025-08-23_
+_Release date: 2025-08-23_
 
 [GitHub Release v0.1.15](https://github.com/jobuntux/psgc/releases/tag/v0.1.15)
 

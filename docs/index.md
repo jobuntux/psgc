@@ -72,7 +72,7 @@ console.log(listBarangays('01410'))
 
 ## Documentation
 
-![pgsc-new-coding-structure](/pgsc-new-coding-structure.png)
+![pgsc-new-coding-structure](/public/pgsc-new-coding-structure.png)
 **Fig 1**. This package adheres to the **PSGC Revision 1 NEW CODING STRUCTURE**.
 
 * [Important Notes](/dev/notes)

@@ -7,12 +7,37 @@ Here are some important notes when using it:
 - The data comes from the **Philippine Statistics Authority (PSA)** official PSGC releases.  
 - It is regularly updated to match the latest quarterly release.
 
+## Definition
+
+### HUCs
+
+**Highly Urbanized Cities**
+
+- **Not under provincial jurisdiction** → They report directly to the national government.
+- **Residents don’t vote for provincial officials** (like governor).
+- They still appear under their geographic region, but not under a province.
+- In the PSGC dataset, HUCs are usually marked with cityClass: "HUC" and have a “synthetic” province entry for dataset consistency.
+
+#### 🏙 Examples of HUCs
+
+- National Capital Region (NCR) cities (e.g., Quezon City, Manila, Makati, Pasig, etc.).
+- Outside NCR:
+  - Cebu City
+  - Davao City
+  - Iloilo City
+  - Baguio City
+  - Zamboanga City
+  - Cagayan de Oro City
+  - Bacolod City
+
+As of 2025-2Q, there are **33 HUCs** in the Philippines.
+
 ## Codes
 
 - **Region codes** are 2 digits (e.g., "13" for NCR).  
 - **Province codes** are 3 digits.  
-- **Municipality/City codes** are 5 digits.  
-- **Barangay codes** are 8 digits.  
+- **Municipality/City codes identifiers** are 5 digits.  
+- **Barangay codes identifiers** are 8 digits.  
 
 These codes follow the official PSGC structure.
 
@@ -22,7 +47,7 @@ These codes follow the official PSGC structure.
 
 ```json
 {
-  "provCode": "0128",
+  "provCode": "028",
   "provName": "Ilocos Norte"
 }
 ```
