@@ -21,7 +21,7 @@ The PSA defines PSGC codes using a **10-digit format**:
 RR PPP MM BBB
 
 - RR → Region code
-- PPP → Provincial code / Highly Urbanized City (HUC) / Independent Component City (ICC) / Component City
+- PPP → Provincial code / Highly Urbanized City (HUC) / Independent Component City (ICC) / Component City (CC)
 - MM → Municipality/City code
 - BBB → Barangay code
 
@@ -45,68 +45,8 @@ Derived identifiers:
 npm install @jobuntux/psgc
 # or
 yarn add @jobuntux/psgc
-```
-
----
-
-## 🚀 Usage
-
-### Importing:
-
-```js
-import { listRegions, listProvinces, listMuncities, listBarangays } from "@jobuntux/psgc";
-```
-
-### Example: Get all Regions
-
-```js
-// Get all regions
-const regions = listRegions();
-console.log(regions.count);
-// → 18 // Regions count based on PSA PSGC dataset
-console.log(regions[0]);
-// {
-//   psgcCode: "1300000000",
-//   regCode: "13",
-//   regionName: "National Capital Region (NCR)"
-// }
-```
-
-### Example: Provinces in a Region
-
-```js
-// Get all provinces in the dataset
-const provinces = listProvinces();
-console.log(provinces.count);
-// → 83
-```
-
-### Example: Municipalities/Cities in a Province
-
-```js
-// Get all municipalities/cities
-const muncities = listMuncities();
-console.log(muncities.count);
-// → 1,656
-
-// Example: City of Makati
-const makatiCity = listMuncities("803");
-console.log(makatiCity.count);
-// → 1
-
-// Example: Muncities of Laguna
-const lagunaMuncities = listMuncities("034");
-console.log(lagunaMuncities.count);
-// → 30
-```
-
-### Example: Barangays in a City of Calamba
-
-```js
-// Get all barangays under a municipality/city
-const calambaBrgy = listBarangays("03405"); // Example: All barangays in the City of Calamba
-console.log(calambaBrgy.count);
-// → 54
+# or
+pnpm add @jobuntux/psgc
 ```
 
 ---
@@ -143,6 +83,12 @@ The dataset includes:
 | **Email**              | scd.staff@psa.gov.ph                                                                                                                                                                              |
 
 > <h4><i>Source: <a href="https://psa.gov.ph/classification/psgc/">https://psa.gov.ph/classification/psgc/</a></i></h4>
+
+---
+
+## 🚀 Usage
+
+Refer to https://jobuntux.github.io/psgc/
 
 ---
 

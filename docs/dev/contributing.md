@@ -14,7 +14,9 @@ Thanks for your interest in contributing to @jobuntux/psgc! We welcome bug repor
 3. Install dependencies:
     ```bash
     npm install
-    or
+    # or
+    yarn install
+    # or
     pnpm install
     ```
 
@@ -69,9 +71,8 @@ Documentation is powered by VitePress. To run locally:
   ```
 
 When contributing:
-- Add new API docs in docs/api/
-- Add guides/examples in docs/guide/ or docs/examples/
-- Dev-related notes (like this page) go in docs/dev/
+- Add guides/examples in `/docs/guide/` or `/docs/examples/`
+- Dev-related notes (like this page) go in `/docs/dev/`
 
 ## Release Process
 

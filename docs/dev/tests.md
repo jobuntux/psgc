@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/jobuntux/psgc/actions/workflows/ci.yml/badge.svg)](https://github.com/jobuntux/psgc/actions/workflows/ci.yml)
 
-This project uses Vitest to ensure the PSGC dataset and utilities are consistent.
+Jest is used in this project to verify the consistency of the PSGC dataset and utilities.
 
 ## Running tests locally
 
@@ -13,11 +13,21 @@ npm test
 ### Sample test
 
 ```typescript
-import { listRegions } from '@jobuntux/psgc';
+import { listRegions } from "../src/core/regions";
+import { totalRegionsCount } from "../tools/constants";
 
-test('listRegions returns 18 regions', () => {
-  expect(listRegions()).toHaveLength(18)
-})
+describe("listRegions", () => {
+  let regions: ReturnType<typeof listRegions>;
+
+  beforeAll(() => {
+    regions = listRegions();
+  });
+
+  it("should list all 18 regions", () => {
+    expect(regions).toBeDefined();
+    expect(Array.isArray(regions)).toBe(true);
+    expect(regions.length).toBe(totalRegionsCount);
+  });
 ```
 
 ## Continuous Integration
