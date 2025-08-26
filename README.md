@@ -82,7 +82,7 @@ The dataset includes:
 | **Fax**                | None                                                                                                                                                                                              |
 | **Email**              | scd.staff@psa.gov.ph                                                                                                                                                                              |
 
-> <h4><i>Source: <a href="https://psa.gov.ph/classification/psgc/">https://psa.gov.ph/classification/psgc/</a></i></h4>
+> <h4><i>Source: <a href="https://psa.gov.ph/classification/psgc/" target="_blank">https://psa.gov.ph/classification/psgc/</a></i></h4>
 
 ---
 
@@ -91,6 +91,12 @@ The dataset includes:
 Refer to https://jobuntux.github.io/psgc/
 
 ---
+
+## 🤝 Contributing
+
+We welcome contributions! 🎉
+
+Check out the [Contributing Guide](./.github/CONTRIBUTING.md) to get started.
 
 ## 📜 License
 

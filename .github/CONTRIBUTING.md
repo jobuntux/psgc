@@ -2,6 +2,9 @@
 
 Thanks for your interest in contributing to @jobuntux/psgc! We welcome bug reports, feature requests, and pull requests. This guide will help you get started.
 
+- Please review the [Code of Conduct](./github/CODE_OF_CONDUCT.md) to understand our community standards.
+- Security issues? Check our [Security Policy](./github/SECURITY.md).
+
 ## Getting Started
 
 1. Fork the repository on GitHub.
@@ -44,6 +47,15 @@ Thanks for your interest in contributing to @jobuntux/psgc! We welcome bug repor
   Run `npm run lint` and `npm test`
   Ensure the docs build with `npm run docs:build`
 
+## Reporting Issues
+
+To report an issue, please use the GitHub Issues tab and provide as much detail as possible, including clear steps to reproduce, the PSGC dataset version you’re using, and the expected versus actual behavior. If the issue relates to dataset quirks (for example, submunicipalities such as Binondo), include references or links to the official PSA source for context.
+
+### 🐛 Issues & 💡 Features
+- Found a bug? [Open a Bug Report](https://github.com/jobuntux/psgc/issues/new?template=bug_report.yml)
+- Have an idea? [Request a Feature](https://github.com/jobuntux/psgc/issues/new?template=feature_request.yml)
+- Docs unclear? [Suggest a Docs Update](https://github.com/jobuntux/psgc/issues/new?template=docs_request.yml)
+
 ## Submitting Changes
 
 1. Push your branch to your fork.
@@ -51,11 +63,26 @@ Thanks for your interest in contributing to @jobuntux/psgc! We welcome bug repor
 3. Describe your changes clearly (what, why, how).
 4. The maintainers will review, request changes if needed, and merge.
 
-## Reporting Issues
+### 🔀 Pull Requests
 
-- Use the Issues tab on GitHub.
-- Provide as much detail as possible (steps to reproduce, dataset version, expected vs actual behavior).
-- If related to PSGC dataset quirks (for example, submunicipalities like Binondo), include links to the PSA reference.
+When opening a PR, please select the type that best describes your changes:
+- ✨ Feature
+- 🐛 Bugfix
+- 📖 Docs Update
+- 🛠 Chore / Maintenance
+
+👉 Open a Pull Request at https://github.com/jobuntux/psgc/compare
+
+You can also pre-fill the PR description by adding a template parameter to the URL:
+- `&template=feature.md`
+- `&template=bugfix.md`
+- `&template=docs.md`
+- `&template=chore.md`
+
+Example using dev as the base branch, temp as your branch, and the bugfix.md template:
+
+https://github.com/jobuntux/psgc/compare/dev...temp?expand=1&template=bugfix.md
+![PR Template](/public/pr-template.png)
 
 ## Code Style
 
