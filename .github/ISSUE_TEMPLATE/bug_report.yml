@@ -1,0 +1,45 @@
+name: "🐛 Bug Report"
+description: Report something not working as expected
+title: "[BUG] "
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear description of the problem
+      placeholder: "Example: Barangays in City of Manila do not appear in the dropdown"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How do we reproduce the bug?
+      placeholder: |
+        1. Go to ...
+        2. Select ...
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+      placeholder: "Expected barangays to appear after selecting City of Manila"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Screenshots / Logs
+      description: Add any relevant logs, screenshots, or error messages.
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Node.js version / OS / Package version
+      placeholder: "Node 22, macOS, @jobuntux/psgc v0.1.15"

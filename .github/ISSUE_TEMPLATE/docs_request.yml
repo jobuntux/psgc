@@ -1,0 +1,33 @@
+name: "📖 Documentation Request"
+description: Suggest improvements or changes to the documentation
+title: "[DOCS] "
+labels: [documentation]
+body:
+  - type: textarea
+    id: section
+    attributes:
+      label: Affected Section
+      description: Which part of the docs needs updating or improvement?
+      placeholder: "Example: README.md, Vue example, contributing guide"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What's the issue?
+      description: Describe what's unclear, missing, or incorrect
+      placeholder: "The README example for listBarangays doesn't mention the munCityCode requirement"
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Update
+      description: How should it be improved?
+      placeholder: "Add a code snippet that shows how to filter barangays by munCityCode"
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any extra info, screenshots, or references

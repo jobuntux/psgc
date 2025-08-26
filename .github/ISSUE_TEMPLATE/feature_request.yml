@@ -1,0 +1,39 @@
+name: "✨ Feature Request"
+description: Suggest an idea for this project
+title: "[FEATURE] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the feature you'd like to see
+      placeholder: "Example: Add helper to search barangays by name"
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this feature important or useful?
+      placeholder: "It would help developers quickly look up barangays without knowing the code"
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      description: How should it work in this library?
+      placeholder: "Expose a function like listBarangaysByName('Milagrosa')"
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Any other ways you've considered solving this?
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add any extra details, screenshots, or references
