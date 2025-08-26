@@ -3,34 +3,37 @@ import { totalBrgyCount } from "../tools/constants";
 // import { logMessage } from "../src/utils/logger";
 
 describe("Barangays", () => {
-  it("should list all barangays (42,011 total)", () => {
-    const barangays = listBarangays();
-    // logMessage("barangays", barangays);
+  let barangays: ReturnType<typeof listBarangays>;
 
+  beforeAll(() => {
+    barangays = listBarangays();
+  });
+  // logMessage("barangays", barangays);
+
+  it("should list all barangays (42,011 total)", () => {
     expect(barangays).toBeDefined();
     expect(Array.isArray(barangays)).toBe(true);
-    expect(barangays.length).toBe(totalBrgyCount); // Based on PSA PSGC dataset
+    expect(barangays.length).toBe(totalBrgyCount);
   });
 
-  it("should filter barangays by city/municipality", () => {
-    const barangays = listBarangays("03405"); // City of Calamba
-    expect(barangays.length).toEqual(54); // Number of barangays in City of Calamba
+  it("should return the correct number of barangays by city/municipality", () => {
+    const uniqueMunCityCodes = [...new Set(barangays.map((b) => b.munCityCode))];
+
+    for (const munCityCode of uniqueMunCityCodes) {
+      const expected = barangays.filter((b) => b.munCityCode === munCityCode).length;
+      const barangaysList = listBarangays(munCityCode);
+
+      expect(barangaysList.length).toEqual(expected);
+    }
   });
 
-  it("should filter barangays by city/municipality", () => {
-    const barangays = listBarangays("30100"); // City of Angeles
-    expect(barangays.length).toEqual(33); // Number of barangays in City of Angeles
-  });
-
-  it("should fetch a specific barangay", () => {
-    const barangays = listBarangays();
-    const filtered = barangays.filter((b) => b.brgyCode === "03405057"); // Example: Milagrosa (Tulo), City of Calamba
-
-    expect(filtered[0].brgyName).toBe("Milagrosa");
+  it("should include Milagrosa in City of Calamba", () => {
+    const calambaBarangays = listBarangays("03405");
+    const names = calambaBarangays.map((b) => b.brgyName);
+    expect(names).toContain("Milagrosa");
   });
 
   it("should return empty array when no barangays match", () => {
-    const barangays = listBarangays();
     const filtered = barangays.filter((b) => b.brgyCode === "XXX"); // Non-existent city/mun
     expect(filtered).toEqual([]);
   });

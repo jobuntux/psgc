@@ -46,14 +46,7 @@ describe("listProvinces", () => {
   it("should test return provinces and HUCs of Region 4", () => {
     const region4Provinces = listProvinces("04");
     // logMessage("region4Provinces", region4Provinces);
-    const expectedPatterns = [
-      /Batangas/i,
-      /Cavite/i,
-      /Laguna/i,
-      /Quezon/i,
-      /Rizal/i,
-      /Lucena/i, // matches "City of Lucena", "Lucena City", even with spaces
-    ];
+    const expectedPatterns = [/Batangas/i, /Cavite/i, /Laguna/i, /Quezon/i, /Rizal/i, /Lucena/i];
 
     expect(Array.isArray(region4Provinces)).toBe(true);
     expect(region4Provinces.length).toEqual(expectedPatterns.length);
