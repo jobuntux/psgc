@@ -1,0 +1,24 @@
+templates:
+  - name: "✨ Feature PR"
+    description: For adding new features or enhancements
+    title: "[FEATURE] "
+    labels: ["enhancement"]
+    path: feature.md
+
+  - name: "🐛 Bugfix PR"
+    description: For fixing bugs or regressions
+    title: "[BUGFIX] "
+    labels: ["bug"]
+    path: bugfix.md
+
+  - name: "📖 Docs PR"
+    description: For improving or updating documentation
+    title: "[DOCS] "
+    labels: ["documentation"]
+    path: docs.md
+
+  - name: "🛠 Chore / Maintenance PR"
+    description: For refactors, test updates, CI/CD, or dependency bumps
+    title: "[CHORE] "
+    labels: ["chore"]
+    path: chore.md
